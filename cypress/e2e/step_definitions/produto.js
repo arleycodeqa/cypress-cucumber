@@ -1,7 +1,7 @@
 import {Given, When, Then, } from '@badeball/cypress-cucumber-preprocessor';
   
   Given("que faço login no sistema com usuário {string} e {string}", function (username, password) {
-    cy.visit('https://www.saucedemo.com/v1/')
+    cy.visit('/')
     cy.get('[data-test="username"]').type(username)
     cy.get('[data-test="password"]').type(password)
     cy.get('#login-button').click();

@@ -27,7 +27,7 @@ const home = new Home
   })
 
   When("submeto minhas credênciais:", function (dataTable) {
-    const user = dataTable.rowsHash()
+    const user = dataTable.rowsHash();
        main.submitFirstName(user.firstname)
        main.submitLastName(user.lastname)
        main.submitCodePostal(user.postalcode)
@@ -60,4 +60,12 @@ const home = new Home
 
   Then('devo visualizar o produto adicionado no carrinho', function () {
        main.visibleProductCar()
+  })
+
+  When('realizo as tentativas de preenchimento de {string}, {string} e {string}', function (firstname, lastname, postalcode) {
+      main.attemptToFill(firstname, lastname, postalcode)
+  })
+
+  Then('devo ver uma notificação de erro {string}', function (notice) {
+    main.errorButton(notice)
   })

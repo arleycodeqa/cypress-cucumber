@@ -5,7 +5,7 @@ const userName = '[data-test="username"]'
 const userPassword = '[data-test="password"]'
 const loginHome = '#login-button'
 const mainScreenValidation = '.app_logo'
-const accessingNotification = '.error-button'
+const accessingNotification = '[data-test=error]'
 
 export default class Home {
 
@@ -13,16 +13,19 @@ export default class Home {
         cy.visit('/')
         Base.verifyElementExist(validationHomeLogin)
     }
+
     typeUser(User, Password) {
         Base.typeValue(userName, User)
         Base.typeValue(userPassword, Password)
         Base.clickElement(loginHome)
     }
+
     homeValidation() {
         Base.verifyElementExist(mainScreenValidation)
     }
-    acessNotification() {
-        Base.verifyElementExist(accessingNotification)
+
+    acessNotification(notice) {
+        Base.verifyElementExist(accessingNotification, notice)
     }
 }
 

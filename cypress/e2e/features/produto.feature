@@ -41,3 +41,17 @@ Funcionalidade: Produto
         |lastname   |novo     |
         |postalcode |69000000 |
     Então finalizo minha compra
+
+  Cenário: Tentativa de preenchimento de informações
+    Quando adciono o produto no carrinho
+    E realizo checkout no carrinho
+    E realizo as tentativas de preenchimento de "<firstname>", "<lastname>" e "<postalcode>"
+    Então devo ver uma notificação de erro "<mensagem>"
+    Exemplos:
+
+    |firstname |lastname |postalcode |mensagem                       |
+    |teste     |         |69080000   |Error: Last Name is required   |
+    |          |teste    |69080000   |Error: First Name is required  |
+    |testeName |teste    |           |Error: Postal Code is required |
+
+

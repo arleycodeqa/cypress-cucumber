@@ -14,6 +14,6 @@ const home = new Home
       home.homeValidation(checkpoint)
   });
   
-  Then("devo ver a notificação de erro {string}", function (checkpoint, notice) {
-      home.acessNotification(checkpoint, notice)
+  Then("devo ver a notificação de erro {string}", function (notice) {
+      home.acessNotification(notice)
   }) 

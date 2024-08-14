@@ -21,6 +21,7 @@ const visibleProduct = '[id="item_4_title_link"]'
 const displayName = '[id="item_4_title_link"] > .inventory_item_name'
 const viewPreco = '.inventory_item_price'
 const viewDescription = '.inventory_item_desc'
+const errorNotification = '.error-button'
 
 
 export default class Main {
@@ -82,5 +83,15 @@ export default class Main {
         Base.viewIfContains(finishPageValidate, 'THANK YOU FOR YOUR ORDER')
     }
 
+    attemptToFill(firstname, lastname, codepostal) {
+        Base.typeValue(firstName, firstname)
+        Base.typeValue(lastName, lastname)
+        Base.typeValue(codePostal, codepostal)
+        Base.clickElement(continueProcess)
+    }
+
+    errorButton() {
+        Base.verifyElementExist(errorNotification)
+    }
 
 }

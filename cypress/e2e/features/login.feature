@@ -19,13 +19,8 @@ Funcionalidade: Login
     Então devo ver o dashboard
 
   Cenario: Login de usuário bloqueado
-    Quando submeto minhas credênciais com "<usuario>" e "<senha>"
-    Então devo ver a notificação de erro "<mensagem>"
-
-    Exemplos:
-      |usuario         |senha        |mensagem                              |
-      |locked_out_user |secret_sauce |Sorry, this user has been locked out. |
-
+    Quando submeto minhas credênciais com "locked_out_user" e "secret_sauce"
+    Então devo ver a notificação de erro "Sorry, this user has been locked out."
 
   Esquema do Cenário: Tentativa de fazer login
     Quando submeto minhas credênciais com "<usuario>" e "<senha>"
